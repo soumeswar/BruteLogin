@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <form id="loginForm">
+        Username : <input type="text" id="username" name="username" value="Hacker"><br>
+        Password : <input type="text" id="password" name="password"><br>
+        <input type="submit" value="SUBMIT">
+    </form>
+</body>
+<script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        
+        if (password === "rockyou") {
+            // Redirect to YouTube if password is correct
+            window.location.href = "https://youtube.com/";
+        } else {
+            // Implement brute force prevention logic here (e.g., lockout after multiple failed attempts)
+            alert("Invalid password. Please try again.");
+        }
+    });
+</script>
+</html>
